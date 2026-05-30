@@ -1,0 +1,10 @@
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.6
+groq>=0.11.0
+requests>=2.32.3
+beautifulsoup4>=4.12.3
+python-dotenv>=1.0.1
+pydantic>=2.10.0
+playwright>=1.40.0
+PyGithub>=2.1.1
+paramiko>=3.4.0
