@@ -5,7 +5,7 @@ interface Props {
   url: string
 }
 
-export default function AuditSummary({ summary, url }: Props) {
+export default function AuditSummary({ summary, url: _url }: Props) {
   const [copied, setCopied] = useState(false)
 
   function handleCopy() {

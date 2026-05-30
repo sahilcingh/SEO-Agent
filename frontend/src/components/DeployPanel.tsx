@@ -58,7 +58,7 @@ export default function DeployPanel({ report }: Props) {
   async function handleDeploy() {
     setLoading(true); setError(null); setResult(null)
     try {
-      const res = await fetch("${API_BASE}/api/deploy", {
+      const res = await fetch(`${API_BASE}/api/deploy`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ config: buildConfig(), audit_report: report }),

@@ -14,7 +14,7 @@ interface Props {
   report: AuditReport
 }
 
-function CopyBlock({ label, code, lang = "html" }: { label: string; code: string; lang?: string }) {
+function CopyBlock({ label, code }: { label: string; code: string; lang?: string }) {
   const [copied, setCopied] = useState(false)
   return (
     <div className="space-y-2">
@@ -48,7 +48,7 @@ export default function FixesPanel({ report }: Props) {
     setLoading(true)
     setError(null)
     try {
-      const res = await fetch("${API_BASE}/api/fix", {
+      const res = await fetch(`${API_BASE}/api/fix`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url: report.url, audit_report: report }),
@@ -68,7 +68,7 @@ export default function FixesPanel({ report }: Props) {
   async function handleDownload() {
     setDownloading(true)
     try {
-      const res = await fetch("${API_BASE}/api/fix/download", {
+      const res = await fetch(`${API_BASE}/api/fix/download`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url: report.url, audit_report: report }),
